@@ -1,10 +1,40 @@
-import React from 'react'
+import { AppBar, List, ListItem, Toolbar, useMediaQuery, useTheme } from '@mui/material';
+import React from 'react';
+import './Header.css';
+import { Link, NavLink } from 'react-router-dom';
+import { Headphones, Home, Podcasts, ExpandMore, SearchOutlined } from '@mui/icons-material';
+import SearchBar from './SearchBar';
 
 const Header = () => {
+  const theme = useTheme();
+  const isMD = useMediaQuery(theme.breakpoints.down('md'));
   return (
-    <div>
-      Header
-    </div>
+    <AppBar className="header" elevation={0}>
+      <Toolbar>
+        <List className='headertabs'>
+          <ListItem>
+            <Link to='/'>
+              {isMD ? (
+                <img src='https://d5fx445wy2wpk.cloudfront.net/static/logo_stacked.svg' alt='Amazon Prime Music' />
+              ) : (
+                <img 
+                  src='https://d5fx445wy2wpk.cloudfront.net/static/logo.svg' 
+                  alt='Amazon Prime Music'
+                />
+              )}
+            </Link>
+          </ListItem>
+          <ListItem className='headerTabsAndSearchBar'>
+            <div className='headerTabs'>
+              <NavLink to='/'><Home /> Home</NavLink>
+              <NavLink to='/social'><Podcasts /> Podcasts</NavLink>
+              <NavLink to='/library'><Headphones /> Library<ExpandMore /> </NavLink>
+            </div>
+            <SearchBar />
+          </ListItem>
+        </List>
+      </Toolbar>
+    </AppBar>
   )
 }
 

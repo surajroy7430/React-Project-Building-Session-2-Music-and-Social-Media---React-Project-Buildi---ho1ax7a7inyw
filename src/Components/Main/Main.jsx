@@ -2,8 +2,8 @@ import React from 'react'
 
 const Main = () => {
   return (
-    <div>
-      
+    <div style={{color: 'red'}}>
+      Main
     </div>
   )
 }
