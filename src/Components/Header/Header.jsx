@@ -1,8 +1,8 @@
-import { AppBar, List, ListItem, Toolbar, useMediaQuery, useTheme } from '@mui/material';
+import { AppBar, Avatar, List, ListItem, Toolbar, useMediaQuery, useTheme } from '@mui/material';
 import React from 'react';
 import './Header.css';
 import { Link, NavLink } from 'react-router-dom';
-import { Headphones, Home, Podcasts, ExpandMore, SearchOutlined } from '@mui/icons-material';
+import { Headphones, Home, Podcasts, ExpandMore } from '@mui/icons-material';
 import SearchBar from './SearchBar';
 
 const Header = () => {
@@ -10,7 +10,7 @@ const Header = () => {
   const isMD = useMediaQuery(theme.breakpoints.down('md'));
   return (
     <AppBar className="header" elevation={0}>
-      <Toolbar>
+      <Toolbar disableGutters>
         <List className='headertabs'>
           <ListItem>
             <Link to='/'>
@@ -31,6 +31,7 @@ const Header = () => {
               <NavLink to='/library'><Headphones /> Library<ExpandMore /> </NavLink>
             </div>
             <SearchBar />
+            <Avatar sx={{ background: 'grey', marginLeft: '25px' }} />
           </ListItem>
         </List>
       </Toolbar>
