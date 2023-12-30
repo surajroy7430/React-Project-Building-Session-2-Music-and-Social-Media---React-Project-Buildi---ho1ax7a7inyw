@@ -1,0 +1,28 @@
+.musicCard {
+    height: 250px;
+    width: 200px;
+    margin-bottom: 20px;
+}
+.thumbnailImg {
+    cursor: pointer;
+    border-radius: 12px;
+    height: 200px;
+    width: 200px;
+}
+.songTitle, .songArtists {
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.songTitle {
+    color: #fff;
+    cursor: pointer;
+    padding: 5px 0;
+}
+.songTitle:hover {
+    color: #25d1da;
+}
+.songArtists {
+    color: #999999;
+}
