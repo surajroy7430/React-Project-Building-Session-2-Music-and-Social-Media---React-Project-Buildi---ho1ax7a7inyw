@@ -1,15 +1,18 @@
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Header from './Components/Header/Header';
 import Main from './Components/Main/Main';
-import MusicPlayer from './Components/MusicPlayer';
+import Podcasts from './Components/Podcasts/Podcasts';
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Header />
-      <Main />
-      <MusicPlayer />
-    </div>
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/social" element={<Podcasts />} />
+      </Routes>
+    </>
   );
 }
 
