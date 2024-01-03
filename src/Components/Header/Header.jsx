@@ -34,7 +34,11 @@ const Header = () => {
           <li className='headerLinks'>
             <Button LinkComponent={NavLink} to='/social'>
               <Podcasts fontSize='large' />
+<<<<<<< HEAD
               <span>Social</span>
+=======
+              <span>Podcasts</span>
+>>>>>>> 111007acd7961629143e9394f094e28ae33d4584
             </Button>
           </li>
           <li className='headerLinks'>

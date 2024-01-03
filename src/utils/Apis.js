@@ -48,7 +48,11 @@ export const getMusicLists= async(page, limit) => {
             `${BASE_DOMAIN}/music/song?page=${page}&limit=${limit}`, 
             configById
         );
+<<<<<<< HEAD
         // console.log(response.data);
+=======
+        console.log(response.data);
+>>>>>>> 111007acd7961629143e9394f094e28ae33d4584
         
         return response.data.data;
     } catch (error) {
@@ -76,9 +80,15 @@ export const getSocialPosts = async(page, limit) => {
             `${BASE_DOMAIN}/quora/post?page=${page}&limit=${limit}`, 
             configById
         );
+<<<<<<< HEAD
         // console.log(response.data.data);
         
         return response.data.data;
+=======
+        console.log(response.data);
+        
+        return response.data;
+>>>>>>> 111007acd7961629143e9394f094e28ae33d4584
     } catch (error) {
         // console.error("Error fetching products: ", error);
         throw error.response.data.message;
