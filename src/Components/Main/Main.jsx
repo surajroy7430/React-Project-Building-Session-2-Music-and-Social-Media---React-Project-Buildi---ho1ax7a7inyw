@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import SongsLists from '../Musics/SongsLists';
 import './Main.css';
 import CustomLoader from '../Loader/CustomLoader';
-import MusicPlayer from '../Musics/MusicPlayer';
 
 const Main = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -21,7 +20,6 @@ const Main = () => {
   return (
     <div className="hero">
       <SongsLists />
-      <MusicPlayer />
     </div>
   )
 }

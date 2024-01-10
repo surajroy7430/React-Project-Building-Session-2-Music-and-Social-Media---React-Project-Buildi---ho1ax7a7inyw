@@ -17,27 +17,83 @@
 }
 
 
-header.musicPlayer {
-    height: 100px;
-    backdrop-filter: blur(30px);
-    transition: bottom .2s ease;
-    inset-inline-start: 0;
-    inset-inline-end: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.5) 0%, #000 100%);
-}
-.musicTimer {
-    background-color: rgba(255,255,255,.3);
-    display: flex;
-    top: 0;
-    margin: 0 auto;
-    width: 100%;
-    height: 2.5px;
-}
 .musicDetails {
-    height: 80px;
-    margin: 0 auto;
     display: flex;
-    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+}
+p.musicPlayerTitle {
     color: #fff;
-    padding: 16px;
+}
+p.musicPlayerTitle:hover {
+    color: #25d1da;
+    cursor: pointer;
+}
+p.musicPlayerArtist {
+    color: #999999;
+}
+
+
+.rhap_container {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.5) 0%, #000 100%);
+    backdrop-filter: blur(30px);
+    height: 120px;
+    transition: bottom .2s ease;
+}
+.rhap_additional-controls {
+    flex: 1 0;
+}
+.rhap_time {
+    color: #bbb;
+}
+.rhap_progress-bar {
+    height: 2px;
+}
+.rhap_rewind-button, 
+.rhap_forward-button,
+.rhap_skip-button  {
+    color: #eee;
+    font-size: 45px;
+    width: 45px;
+    height: 45px;
+}
+.rhap_rewind-button:hover, 
+.rhap_forward-button:hover,
+.rhap_skip-button:hover,
+.rhap_volume-button:hover {
+    color: #91e6eb;
+}
+.rhap_play-pause-button {
+    background: radial-gradient(circle, #fff 10px, transparent, transparent);
+    border-radius: 50%;
+    font-size: 55px;
+    width: 55px;
+    height: 55px;
+}
+.rhap_play-pause-button:hover {
+    scale: 1.01;
+}
+.rhap_volume-container {
+    gap: 10px;
+    flex: 0 1 150px;
+}
+.rhap_volume-button {
+    color: #eee;
+    font-size: 30px;
+    width: 30px;
+    height: 30px;
+}
+.rhap_volume-bar {
+    border-radius: 0;
+    background: #fff;
+    height: 6px;
+}
+.rhap_volume-indicator {
+    height: 16px;
+    width: 16px;
+    top: -5px;
+    background: #fff;
 }

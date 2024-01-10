@@ -1,14 +1,24 @@
-import { AppBar, Avatar, Button, List, ListItem, Toolbar, useMediaQuery, useTheme } from '@mui/material';
-import React from 'react';
+import { AppBar, Avatar, Button, Menu, MenuItem, Toolbar, useMediaQuery, useTheme } from '@mui/material';
+import React, { useState } from 'react';
 import './Header.css';
 import { Link, NavLink } from 'react-router-dom';
 import { Headphones, Home, Podcasts, ExpandMore } from '@mui/icons-material';
 import SearchBar from './SearchBar';
 import { ReactComponent as SearchIcon} from '../../assets/SearchIcon.svg'
+import Profile from './Profile';
 
 const Header = () => {
+  const [anchorElUser, setAnchorElUser] = useState(null);
   const theme = useTheme();
   const isMD = useMediaQuery(theme.breakpoints.down('md'));
+
+  const handleAvatarClick = (event) => {
+    setAnchorElUser(event.currentTarget);
+  }
+  const handleClose = () => {
+    setAnchorElUser(null);
+  }
+
   return (
     <AppBar className="header" elevation={0}>
       <Toolbar className='toolbar' disableGutters>
@@ -33,12 +43,7 @@ const Header = () => {
           </li>
           <li className='headerLinks'>
             <Button LinkComponent={NavLink} to='/social'>
-              <Podcasts fontSize='large' />
-<<<<<<< HEAD
-              <span>Social</span>
-=======
-              <span>Podcasts</span>
->>>>>>> 111007acd7961629143e9394f094e28ae33d4584
+              <Podcasts fontSize='large' /> Social
             </Button>
           </li>
           <li className='headerLinks'>
@@ -59,7 +64,7 @@ const Header = () => {
             </button>
           </div>
           <li>
-            <Avatar sx={{ background: 'grey', marginLeft: '25px' }} />
+            <Profile />
           </li>
         </ul>
       </Toolbar>
