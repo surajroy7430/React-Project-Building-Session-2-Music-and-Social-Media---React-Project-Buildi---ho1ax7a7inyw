@@ -3,7 +3,7 @@
     width: 200px;
     margin-bottom: 20px;
 }
-.thumbnailImg {
+.thumbnailContainer {
     cursor: pointer;
     border-radius: 12px;
     height: 200px;
@@ -26,3 +26,24 @@
 .songArtists {
     color: #999999;
 }
+
+.extraIcons {
+    align-items: center;
+    background-color: rgba(0,0,0,.5);
+    border-radius: 12px;
+    height: inherit;
+    width: inherit;
+    display: flex;
+    justify-content: space-around;
+}
+.playingIcon {
+    height: 32px;
+    width: 32px;
+}
+/* .imageHoverIcons {
+    display: none;
+}
+.imageHoverIcons:hover {
+    display: inline-block;
+    background-color: rgba(44, 44, 44, 0.5);
+} */
