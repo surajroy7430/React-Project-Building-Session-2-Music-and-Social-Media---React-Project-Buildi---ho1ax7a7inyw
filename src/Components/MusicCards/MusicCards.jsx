@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './MusicCards.css';
 import { useMusic } from '../../utils/MusicProvider';
-import { Add, Menu, PlayCircle } from '@mui/icons-material';
 
 const MusicCards = (props) => {
   const { selectedMusic, selectMusic } = useMusic();
-  const { _id, artist, audio_url, title, thumbnail } = props;
+  const { _id, artist, title, thumbnail } = props;
   const artistsList = artist.map((item) => item.name).join(", ");
 
   const isSelected = selectedMusic && selectedMusic._id === _id;
