@@ -7,27 +7,12 @@ import SearchBar from './SearchBar';
 import { ReactComponent as SearchIcon} from '../../assets/SearchIcon.svg'
 import Profile from './Profile';
 import WarningDialog from '../Loader/WarningDialog';
+import { useWarningDialog } from '../Loader/WarningDialogContext';
 
 const Header = () => {
-  const [anchorElUser, setAnchorElUser] = useState(null);
   const theme = useTheme();
   const isMD = useMediaQuery(theme.breakpoints.down('md'));
-  const [open, setOpen] = useState(false);
-
-  const handleWarningOpen = () => {
-    setOpen(true);
-  };
-
-  const handleWarningClose = () => {
-    setOpen(false);
-  };
-
-  const handleAvatarClick = (event) => {
-    setAnchorElUser(event.currentTarget);
-  }
-  const handleClose = () => {
-    setAnchorElUser(null);
-  }
+  const { openWarningDialog } = useWarningDialog();
 
   return (
     <>
@@ -59,7 +44,7 @@ const Header = () => {
           </li>
           <li className='headerLinks'>
             <Button 
-              onClick={handleWarningOpen}
+              onClick={openWarningDialog}
               // LinkComponent={NavLink}
               // to='/library'
             >
@@ -81,7 +66,9 @@ const Header = () => {
         </ul>
       </Toolbar>
     </AppBar>
-    <WarningDialog warningClose={handleWarningClose} />
+
+
+    <WarningDialog />
     </>
   )
 }
